@@ -62,6 +62,35 @@ namespace MailRuParser
             if (!pass)                                                               //если ни один из паролей не подошел,сообщаем пользователю
             {
                 Console.WriteLine("Ни один из паролей из базы не подошел у указанному ящику");
+                FileStream baza = new FileStream("baza.txt", FileMode.Create, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(baza);
+                string symb = "abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ0123456789";
+                for (int a = 0;a<symb.Length;a++)
+                {
+                    for (int b = 0;b <symb.Length;b++)
+                    {
+                        for (int c = 0; c< symb.Length;c++)
+                        {
+                            for (int d = 0; d < symb.Length; d++)
+                            {
+                                for (int e = 0; e < symb.Length; e++)
+                                {
+                                    for (int f = 0; f< symb.Length;f++)
+                                    {
+                                        for (int g = 0; g< symb.Length;g++)
+                                        {
+                                            for (int h = 0; h < symb.Length; h++)
+                                            {
+                                                string passparse = symb[a].ToString() + symb[b].ToString() + symb[c].ToString() + symb[d].ToString() + symb[e].ToString() + symb[f].ToString() + symb[g].ToString() + symb[h].ToString();
+                                                sw.WriteLine(passparse);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
